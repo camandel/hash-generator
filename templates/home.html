@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8" />
+  <title>Hash Generator</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script>
+		window.addEventListener('DOMContentLoaded', (event) => {
+        var logoutBtn = document.getElementById("logoutBtn");
+        logoutBtn.addEventListener("click", (e) => {
+        	document.cookie = "token=;expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;";
+        	window.location.href = "/";
+        });
+    });
+  </script>
+ </head>
+ <body>
+<nav class="navbar sticky-top navbar-expand-sm navbar-dark bg-primary justify-content-between">
+  <div class="navbar-brand">
+     Hash Generator
+  </div>
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+       <li class="nav-item">
+         <a class="nav-link" href="/">Home</a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link" href="/generateHash">New</a>
+       </li>
+    </ul>
+    <ul class="navbar-nav mr-0">
+       <li class="nav-item">
+          <a class="nav-link" href="#" id="logoutBtn">Logout</a>
+       </li>
+    </ul>
+  </div>
+</nav>
+      <main role="main">
+        <section class="mt-5 text-center">
+          <div class="container">
+            <h4 class="jumbotron-heading">Hi {{.Email}}!</h4>
+            <a class="btn btn-primary mt-2" href="/generateHash">New Hash</a>
+            <p class="lead text-muted mt-2">{{.Flag}}</p>
+          </div>
+        </section>
+      </main>
+  </body>
+</html>
